@@ -39,3 +39,5 @@ Moreno has set a clear goal: Design marketing strategies aimed at converting cas
 do that, however, the marketing analyst team needs to better understand how annual members and casual riders differ, why
 casual riders would buy a membership, and how digital media could affect their marketing tactics. Moreno and her team are
 interested in analyzing the Cyclistic historical bike trip data to identify trends.
+-----------------------------------------
+refer to journal to see steps taken in this analysis
