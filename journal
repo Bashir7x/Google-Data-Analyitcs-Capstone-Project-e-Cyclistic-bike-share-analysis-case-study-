@@ -1,0 +1,44 @@
+1- downloaded the data for the analyisis using this licencse (https://www.divvybikes.com/data-license-agreement)
+2- saved  all files into one folder (CSV Files)
+3- start of the cleaning process
+	-combined all data into a single worksheet in excel (combo)
+	-in RStudio loaded the xlsx file (combo) to a variable(trip_data)
+	-converted (started_at) and (ended_at) to date format of (mdy-hm)
+	-created the (ride_length ) column and calculated the by subtracting the values (started_at) from the values of (ended_at)
+	-added (start_location)and (end_location) columns to the data to make geo location available for analysis
+	-most  of the data cleaning was done in r with omit NAs
+	-in excel removed 16511 row of currupted data
+	-took a sample of the data as the population was too big for efficient analysis (5952028 to be exact)
+		the sample size =16009
+		and the confidence level of =99%
+		with a margin of error =1%
+	-added day_of_week and ride_length columns in excel and caculated each
+		day_of_week (=IFERROR(WEEKDAY(C2,17),0)) 
+		ride_length (=IFERROR(D2-C2,0))
+4- Analysis phase_____
+	-refer to the R Markdown file to see the analysis 
+	-compared the average number of rides each usertype daily 
+	-calculated the avreage ride length
+	-calculated the number of rides take daily
+	-discriptive analysis done i r with summary and calculations the data is exported to an excel file
+	-visulizations for avrage ride lenght and number of rides by  usertype made using ggplot2 
+	-added columns (weekday, month, year and quarter)
+		formulas:
+			-weekday =TEXT(C2,"DDD")
+			-month =TEXT(C2,"MMMM")
+			-year = year(c2)
+			-quarter = ="Q"&ROUNDUP(MONTH(C2)/3,0)
+5-Share phase_______
+	using the visulization created in R 
+	- from the analysis these are my findings 
+		1- number of rides for casual users is increased around the weekends.
+		2-the duration of rides is consistant for member users throughout the week.
+		3-casual riders use the bikes for longer rides compared to member users.
+6-Act phase_______
+	Based on my analysis these are my recommendations 
+		1-better deals for casual members around the weekend to get them to sign up for a membership 
+		2-decrease the fees for winter months to get more people to use the bikes as the number of users decreases 
+		3-introduce more options for people with disabilities 
+
+	
+	
